@@ -1,0 +1,10 @@
+.shell {
+  width: min(1400px, calc(100% - 24px));
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 16px 0 max(40px, env(safe-area-inset-bottom));
+}
+
+.main {
+  margin-top: 20px;
+}

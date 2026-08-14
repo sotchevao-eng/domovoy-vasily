@@ -1,0 +1,29 @@
+.link,
+.compact {
+  color: var(--green-dark);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 4px;
+}
+
+.compact {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 4px 2px;
+  font-size: 13px;
+}
+
+.link:hover,
+.compact:hover {
+  color: var(--terracotta-dark);
+  text-decoration: underline;
+}

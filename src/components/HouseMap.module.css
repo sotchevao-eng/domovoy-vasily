@@ -1,0 +1,286 @@
+.wrap {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  overflow-x: hidden;
+  padding: 12px 12px 10px;
+  background: color-mix(in srgb, var(--white) 88%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow-soft);
+}
+
+.map {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 340px;
+  overflow: visible;
+}
+
+.zone {
+  fill: #ead9bd;
+  stroke: rgba(107, 74, 58, 0.16);
+  stroke-width: 1.4;
+  transition:
+    fill 0.35s ease,
+    stroke 0.35s ease,
+    filter 0.35s ease;
+}
+
+.zone:hover {
+  fill: #f3e6cc;
+}
+
+.zoneActive {
+  fill: #f6e7b8;
+  stroke: var(--gold);
+  stroke-width: 2.2;
+  filter: url(#house-glow);
+}
+
+.zoneAlert {
+  fill: #f3d4c4;
+  stroke: var(--terracotta);
+  filter: url(#house-alert);
+}
+
+.zoneGood:not(.zoneActive) {
+  fill: #dfe9c8;
+}
+
+.zoneBad:not(.zoneActive) {
+  fill: #e8d0c4;
+}
+
+.facade {
+  fill: url(#house-wall);
+  stroke: rgba(107, 74, 58, 0.12);
+  stroke-width: 1;
+  pointer-events: none;
+}
+
+.roofShadow {
+  fill: #b86a4c;
+}
+
+.chimney,
+.door,
+.knob {
+  fill: #a85438;
+  pointer-events: none;
+}
+
+.window {
+  fill: #fff8ea;
+  stroke: #8b6848;
+  stroke-width: 1.2;
+  pointer-events: none;
+}
+
+.stairWindow {
+  fill: #fff8ea;
+  stroke: #8b6848;
+  stroke-width: 1.2;
+  pointer-events: none;
+}
+
+.darkStairs .stairWindow {
+  fill: #5a4638;
+  stroke: #3d2f26;
+}
+
+.ajarDoor {
+  fill: #6b4334;
+  pointer-events: none;
+}
+
+.openEntrance .door {
+  fill: #6b4334;
+}
+
+.flower {
+  fill: #d9899a;
+  pointer-events: none;
+}
+
+.flowerAlt {
+  fill: #e2b15a;
+  pointer-events: none;
+}
+
+.brokenBench {
+  fill: #8a6b52;
+  stroke: rgba(74, 50, 40, 0.25);
+  stroke-width: 0.8;
+  pointer-events: none;
+}
+
+.wastePile {
+  fill: #8d6b4f;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.binOverflow {
+  fill: #6d8072;
+  stroke: rgba(74, 50, 40, 0.2);
+  stroke-width: 1;
+  pointer-events: none;
+}
+
+.binLid {
+  fill: #8aa58c;
+  pointer-events: none;
+}
+
+.blockingCar {
+  fill: #7b6a86;
+  stroke: rgba(74, 50, 40, 0.22);
+  stroke-width: 1;
+  pointer-events: none;
+}
+
+.box {
+  fill: #c9a57a;
+  stroke: rgba(74, 50, 40, 0.2);
+  stroke-width: 0.8;
+  pointer-events: none;
+}
+
+.liftDoor {
+  fill: #d7c4a6;
+  stroke: #8b6848;
+  stroke-width: 1.2;
+  pointer-events: none;
+}
+
+.detail {
+  fill: #d9c7ae;
+  stroke: rgba(107, 74, 58, 0.18);
+  stroke-width: 1;
+  pointer-events: none;
+}
+
+.bin {
+  fill: #7a8f7e;
+  stroke: rgba(74, 50, 40, 0.2);
+  stroke-width: 1;
+  pointer-events: none;
+}
+
+.bush {
+  fill: #7a9e7e;
+  pointer-events: none;
+}
+
+.path {
+  fill: #e8d7bb;
+  pointer-events: none;
+}
+
+.mapLabel {
+  fill: var(--brown-soft);
+  font-size: 11px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.marker {
+  pointer-events: none;
+}
+
+.markerDisc {
+  fill: #fffdf8;
+  stroke: var(--gold);
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: marker-pulse 1.8s ease-in-out infinite;
+}
+
+.markerAlert {
+  stroke: var(--terracotta);
+}
+
+.markerText {
+  font-size: 12px;
+}
+
+.alertDisc {
+  fill: #c4785a;
+  animation: marker-pulse 1.6s ease-in-out infinite;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--brown);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.compact .map {
+  max-height: 200px;
+}
+
+.static .zone,
+.static .zoneActive,
+.static .zoneAlert,
+.static .zoneGood,
+.static .zoneBad {
+  transition: none;
+}
+
+.static .markerDisc,
+.static .alertDisc {
+  animation: none;
+}
+
+@keyframes marker-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zone,
+  .zoneActive,
+  .zoneAlert {
+    transition: none;
+  }
+
+  .markerDisc,
+  .alertDisc {
+    animation: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrap {
+    padding: 8px 8px 6px;
+  }
+
+  .map {
+    max-height: 210px;
+  }
+}
+
+@media (max-width: 375px) {
+  .map {
+    max-height: 180px;
+  }
+
+  .mapLabel {
+    font-size: 10px;
+  }
+}

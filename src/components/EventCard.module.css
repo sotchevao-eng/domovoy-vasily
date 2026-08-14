@@ -1,0 +1,70 @@
+.card {
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  padding: 6px 10px;
+  color: var(--green-dark);
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--cream);
+  border-radius: 999px;
+}
+
+.card h2 {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.text {
+  margin: 0 0 16px;
+  color: var(--brown-soft);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.quote {
+  display: flex;
+  gap: 10px;
+  margin: 0 0 20px;
+  padding: 14px 16px;
+  color: var(--brown);
+  background: var(--cream);
+  border-radius: 18px 18px 18px 8px;
+}
+
+.quote p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.choices {
+  display: grid;
+  gap: 10px;
+}
+
+.choices button {
+  justify-content: flex-start;
+  text-align: left;
+}

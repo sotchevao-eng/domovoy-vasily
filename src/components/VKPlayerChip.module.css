@@ -1,0 +1,30 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  margin: 0 0 10px;
+  padding: 6px 10px 6px 6px;
+  color: var(--brown);
+  font-size: 14px;
+  font-weight: 700;
+  background: rgba(255, 253, 248, 0.9);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.photo,
+.placeholder {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--cream);
+  background: var(--green);
+}

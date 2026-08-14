@@ -1,0 +1,83 @@
+.card {
+  display: flex;
+  gap: 16px;
+  height: 100%;
+  padding: 18px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 16px;
+}
+
+.unlocked .icon {
+  color: var(--cream);
+  background: linear-gradient(160deg, var(--gold) 0%, var(--terracotta) 100%);
+  box-shadow: 0 0 0 6px rgba(201, 164, 74, 0.12);
+}
+
+.locked {
+  opacity: 0.78;
+  background: color-mix(in srgb, var(--beige) 55%, var(--white));
+}
+
+.locked .icon {
+  color: var(--brown-soft);
+  background: var(--beige);
+}
+
+.card h3 {
+  margin: 0 0 4px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--brown-soft);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.unlocked .status {
+  color: var(--green-dark);
+}
+
+.quote {
+  margin: 8px 0 0;
+  color: var(--brown);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.card .quote {
+  color: var(--brown);
+}
+
+.compact {
+  padding: 14px;
+}
+
+.compact h3 {
+  font-size: 1.1rem;
+}
+
+.locked .status {
+  color: var(--brown-soft);
+}

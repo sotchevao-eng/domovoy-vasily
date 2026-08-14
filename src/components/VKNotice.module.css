@@ -1,0 +1,28 @@
+.stack {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  margin: 0 0 12px;
+}
+
+.banner,
+.dev {
+  margin: 0;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  text-align: center;
+  border-radius: 14px;
+}
+
+.banner {
+  color: var(--brown);
+  background: rgba(255, 253, 248, 0.92);
+  border: 1px solid var(--line);
+}
+
+.dev {
+  color: var(--terracotta-dark);
+  background: rgba(196, 120, 90, 0.12);
+}

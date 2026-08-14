@@ -1,0 +1,147 @@
+.page {
+  display: grid;
+  gap: 16px;
+}
+
+.dayTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.05;
+  text-align: center;
+}
+
+.progressLabel {
+  margin: -8px 0 0;
+  color: var(--brown-soft);
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.progressBlock {
+  display: grid;
+  gap: 10px;
+}
+
+.track {
+  overflow: hidden;
+  height: 10px;
+  background: var(--beige);
+  border-radius: 999px;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--green) 0%, var(--gold) 100%);
+  border-radius: inherit;
+  transition: width 0.35s ease;
+}
+
+.dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--beige);
+}
+
+.done {
+  background: var(--green);
+}
+
+.current {
+  background: var(--terracotta);
+  box-shadow: 0 0 0 4px rgba(196, 120, 90, 0.18);
+}
+
+.todo {
+  background: #e4d5c2;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.scene {
+  position: sticky;
+  top: 16px;
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+  min-width: 0;
+}
+
+.stage {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+.animated {
+  animation: fadeSlide 0.35s ease;
+}
+
+.finished {
+  padding: 28px 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.finished h2 {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+}
+
+.finished p {
+  margin: 0;
+  color: var(--brown-soft);
+  line-height: 1.6;
+}
+
+.missingActions {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .scene {
+    position: static;
+  }
+}
+
+@media (max-width: 360px) {
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+}

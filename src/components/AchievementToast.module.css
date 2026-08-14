@@ -1,0 +1,144 @@
+.host {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 40;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.toast {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  width: min(420px, 100%);
+  padding: 14px 44px 14px 14px;
+  overflow: hidden;
+  color: var(--brown);
+  background: color-mix(in srgb, var(--white) 94%, transparent);
+  border: 1px solid color-mix(in srgb, var(--gold) 45%, var(--line));
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  pointer-events: auto;
+  animation: toast-in 0.35s ease;
+}
+
+.static {
+  animation: none;
+}
+
+.glow {
+  position: absolute;
+  inset: -40% auto auto -20%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(201, 164, 74, 0.28), transparent 68%);
+  pointer-events: none;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  color: var(--cream);
+  background: linear-gradient(160deg, var(--gold) 0%, var(--terracotta) 100%);
+  border-radius: 14px;
+  animation: icon-pop 0.45s ease;
+}
+
+.static .icon {
+  animation: none;
+}
+
+.body {
+  min-width: 0;
+}
+
+.kicker {
+  margin: 0 0 2px;
+  color: var(--green-dark);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0 0 4px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.15;
+}
+
+.description,
+.quote {
+  margin: 0;
+  color: var(--brown-soft);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.quote {
+  margin-top: 6px;
+  color: var(--brown);
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  color: var(--brown-soft);
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--brown);
+  border-color: var(--gold);
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes icon-pop {
+  0% {
+    transform: scale(0.86);
+  }
+
+  70% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast,
+  .icon {
+    animation: none;
+  }
+}
