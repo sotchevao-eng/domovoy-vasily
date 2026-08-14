@@ -80,7 +80,7 @@ export function DayResultPage() {
           <Vasily
             size="md"
             caption={gameState.eveningMessage || rank.vasilyText}
-            pose={score >= 80 ? 'praise' : score < 50 ? 'grumble' : 'wait'}
+            pose={score >= 80 ? 'celebrate' : score < 50 ? 'tired' : 'wait'}
             reduceMotion={reduceMotion}
           />
           <p className={styles.kicker}>Рабочий день завершён</p>

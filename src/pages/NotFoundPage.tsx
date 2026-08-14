@@ -8,7 +8,7 @@ export function NotFoundPage() {
     <Layout title="Потерянная комната">
       <section className={styles.panel}>
         <div className={styles.center}>
-          <Vasily size="md" caption="Сюда я ещё не заглядывал." />
+          <Vasily size="md" caption="Сюда я ещё не заглядывал." pose="worry" />
         </div>
         <h1>Здесь Василий ещё не бывал</h1>
         <p className={styles.lead}>Кажется, такой комнаты в нашем доме нет.</p>

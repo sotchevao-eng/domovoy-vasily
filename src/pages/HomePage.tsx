@@ -38,7 +38,7 @@ export function HomePage() {
         <VKPlayerChip />
         <p className={styles.badge}>{IS_WEBSITE_MODE ? 'Игра ТСЖ «Васильевский»' : 'Уютный симулятор дома'}</p>
         <div className={styles.hero}>
-          <Vasily size="lg" caption={vasilyCaption} />
+          <Vasily size="lg" caption={vasilyCaption} pose="wait" />
         </div>
 
         <h1 className={styles.title}>Домовой Василий: Хранитель дома</h1>

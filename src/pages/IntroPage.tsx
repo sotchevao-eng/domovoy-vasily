@@ -55,7 +55,7 @@ export function IntroPage() {
       <div className={styles.stack}>
         <section className={styles.panel}>
           <div className={styles.center}>
-            <Vasily size="md" caption="Домовой Василий" />
+            <Vasily size="md" caption="Домовой Василий" pose="explain" reduceMotion={reduceMotion} />
           </div>
           <article
             className={`${styles.speech} ${reduceMotion ? '' : styles.speechIn}`}

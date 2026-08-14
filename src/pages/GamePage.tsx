@@ -94,8 +94,17 @@ export function GamePage() {
   const zoneMarker = getEventZoneMarker(activeSpecialEvent?.id ?? currentEvent?.id);
   const zoneMoods = getZoneMoods(gameState);
   const decisionRating = specialChoice?.rating ?? specialAnswer?.rating ?? selectedChoice?.rating;
-  const vasilyPose: VasilyPose =
-    decisionRating === 'good' ? 'praise' : decisionRating === 'bad' ? 'grumble' : 'wait';
+  const vasilyPose: VasilyPose = decisionRating === 'good'
+    ? 'praise'
+    : decisionRating === 'bad'
+      ? 'grumble'
+      : showMorning
+        ? 'think'
+        : emergency
+          ? 'worry'
+          : activeSpecialEvent
+            ? 'explain'
+            : 'wait';
 
   const vasilyCaption = activeSpecialEvent
     ? specialChoice?.vasilyReaction ??

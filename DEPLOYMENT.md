@@ -96,9 +96,9 @@ location /game/ {
 
 ## Картинка Василия
 
-Текущий образ: `src/assets/vasily/vasily-main.png`.
+Позы лежат в `src/assets/vasily/vasily-*.png`: wait, praise, grumble, tired, think, worry, celebrate, explain.
 
-Чтобы заменить персонажа, положите новый файл `vasily-main.png` (или другой формат) в ту же папку и при смене расширения поправьте импорт в `src/assets/vasily/index.ts`. Компоненты трогать не нужно.
+Чтобы заменить одну позу, положите новый PNG с тем же именем. Импорты собраны в `src/assets/vasily/index.ts`.
 
 ## Open Graph
 

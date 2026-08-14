@@ -14,7 +14,6 @@
   background: radial-gradient(circle, rgba(240, 196, 58, 0.4), rgba(196, 120, 90, 0.14) 55%, transparent 72%);
   filter: blur(8px);
   pointer-events: none;
-  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .image {
@@ -30,10 +29,6 @@
   box-shadow:
     0 0 0 5px rgba(201, 164, 74, 0.28),
     0 14px 24px rgba(74, 50, 40, 0.18);
-  transform-origin: center bottom;
-  transition:
-    transform 0.35s ease,
-    filter 0.35s ease;
 }
 
 .sm {
@@ -59,41 +54,4 @@
   text-align: center;
   background: rgba(255, 253, 248, 0.86);
   border-radius: 14px;
-}
-
-.poseWait .image {
-  transform: none;
-}
-
-.posePraise .image {
-  transform: translateY(-5px) scale(1.04);
-  filter: brightness(1.08) saturate(1.12);
-}
-
-.posePraise .glow {
-  opacity: 1;
-  transform: scale(1.12);
-  background: radial-gradient(circle, rgba(240, 196, 58, 0.55), rgba(196, 120, 90, 0.16) 55%, transparent 72%);
-}
-
-.poseGrumble .image {
-  transform: rotate(-2.2deg) translateY(3px);
-  filter: brightness(0.88) saturate(0.82) sepia(0.14);
-}
-
-.poseGrumble .glow {
-  opacity: 0.28;
-  transform: scale(0.92);
-}
-
-.static .image,
-.static .glow {
-  transition: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .image,
-  .glow {
-    transition: none;
-  }
 }

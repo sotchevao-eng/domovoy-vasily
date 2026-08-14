@@ -1,4 +1,5 @@
 import { Layout } from '../components/Layout';
+import { Vasily } from '../components/Vasily';
 import styles from './page.module.css';
 
 const STATS = [
@@ -25,6 +26,9 @@ export function HowToPlayPage() {
     <Layout title="Как играть">
       <section className={styles.panel}>
         <h1>Как играть</h1>
+        <div className={styles.center}>
+          <Vasily size="md" caption="Я рядом. Главное — не спешить." pose="explain" />
+        </div>
         <p className={styles.lead}>
           Ты помогаешь домовому Василию управлять многоквартирным домом. Одна партия — один день:
           в доме случаются разные события, и каждое нужно решить. После итогов можно сыграть

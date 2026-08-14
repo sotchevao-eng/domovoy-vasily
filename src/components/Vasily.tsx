@@ -1,7 +1,7 @@
-import { vasilyMain } from '../assets/vasily';
+import { vasilyPoses, type VasilyPose } from '../assets/vasily';
 import styles from './Vasily.module.css';
 
-export type VasilyPose = 'wait' | 'praise' | 'grumble';
+export type { VasilyPose };
 
 interface VasilyProps {
   caption?: string;
@@ -16,13 +16,10 @@ export function Vasily({
   pose = 'wait',
   reduceMotion = false,
 }: VasilyProps) {
-  const poseClass =
-    pose === 'praise' ? styles.posePraise : pose === 'grumble' ? styles.poseGrumble : styles.poseWait;
-
   return (
-    <figure className={`${styles.figure} ${styles[size]} ${poseClass} ${reduceMotion ? styles.static : ''}`}>
+    <figure className={`${styles.figure} ${styles[size]} ${reduceMotion ? styles.static : ''}`}>
       <div className={styles.glow} aria-hidden="true" />
-      <img src={vasilyMain} alt="Домовой Василий" className={styles.image} />
+      <img src={vasilyPoses[pose]} alt="Домовой Василий" className={styles.image} />
       {caption ? <figcaption className={styles.caption}>{caption}</figcaption> : null}
     </figure>
   );
