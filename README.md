@@ -42,3 +42,15 @@ npm run build:vk
 ```
 
 Публикация во ВКонтакте: [VK_DEPLOYMENT.md](VK_DEPLOYMENT.md).
+
+## GitHub Pages
+
+Публичная ссылка после выкладки:
+
+https://sotchevao-eng.github.io/domovoy-vasily/
+
+```bash
+npm run build:pages
+```
+
+Каждый push в `main` собирает эту версию автоматически. Обновление страницы на `/play` и других внутренних адресах работает через копию `index.html` → `404.html`.

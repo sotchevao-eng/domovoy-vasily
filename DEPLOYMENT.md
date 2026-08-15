@@ -77,6 +77,21 @@ location /game/ {
 
 Для `alias` синтаксис `try_files` зависит от версии Nginx и остальной конфигурации. Если внутренние маршруты (`/game/play`, `/game/achievements`, `/game/settings`) после обновления страницы отдают 404, сервер должен отдавать `index.html` для всех путей внутри `/game/`. Конфиг нужно проверить на стенде.
 
+## Вариант 3. GitHub Pages
+
+Адрес: `https://sotchevao-eng.github.io/domovoy-vasily/`
+
+```env
+VITE_APP_MODE=standalone
+VITE_BASE_PATH=/domovoy-vasily/
+```
+
+```bash
+npm run build:pages
+```
+
+Сборка кладёт в `dist/` копию `index.html` как `404.html`, чтобы прямые ссылки вроде `/domovoy-vasily/play` открывали игру, а не страницу ошибки GitHub. На сайте ТСЖ потом достаточно поставить эту ссылку. Когда появится постоянный адрес сайта, его можно указать в `VITE_MAIN_SITE_URL` и собрать режим `website`.
+
 ## SPA fallback
 
 Это одностраничное приложение. Прямой переход и обновление браузера на внутренних адресах должны возвращать `index.html`, а не 404.

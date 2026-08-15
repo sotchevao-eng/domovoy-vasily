@@ -10,6 +10,7 @@
     "build:standalone": "tsc -b && vite build --mode standalone",
     "build:website": "tsc -b && vite build --mode website",
     "build:vk": "tsc -b && vite build --mode vk",
+    "build:pages": "tsc -b && vite build --mode pages",
     "lint": "oxlint",
     "preview": "vite preview"
   },
