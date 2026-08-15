@@ -106,16 +106,6 @@ export function GamePage() {
             ? 'explain'
             : 'wait';
 
-  const vasilyCaption = activeSpecialEvent
-    ? specialChoice?.vasilyReaction ??
-      (specialAnswer ? activeSpecialEvent.vasilyReaction : undefined) ??
-      activeSpecialEvent.vasilyText
-    : selectedChoice
-      ? getDecisionReaction(selectedChoice.rating, selectedChoice.vasilyReaction)
-      : showMorning
-        ? gameState.morningMessage
-        : (currentEvent?.vasilyText ?? 'Дом пока отдыхает.');
-
   const handleNext = () => {
     if (advancing) {
       return;
@@ -191,7 +181,7 @@ export function GamePage() {
               reduceMotion={reduceMotion}
               zoneMoods={zoneMoods}
             />
-            <Vasily caption={vasilyCaption} pose={vasilyPose} reduceMotion={reduceMotion} />
+            <Vasily pose={vasilyPose} reduceMotion={reduceMotion} caption="" />
           </aside>
 
           <div

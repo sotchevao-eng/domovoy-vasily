@@ -44,6 +44,22 @@
   overflow-wrap: anywhere;
 }
 
+.quote {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  color: var(--brown);
+  font-size: 15px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.5;
+  background: color-mix(in srgb, var(--gold-light) 28%, var(--white));
+  border-radius: 18px 18px 18px 8px;
+}
+
+.quote p {
+  margin: 0;
+}
+
 .choices,
 .continue {
   display: grid;

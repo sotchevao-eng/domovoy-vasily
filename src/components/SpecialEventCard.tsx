@@ -34,6 +34,12 @@ export function SpecialEventCard({
       <h2>{event.title}</h2>
       <p className={styles.text}>{event.description}</p>
 
+      {event.vasilyText ? (
+        <blockquote className={styles.quote}>
+          <p>{event.vasilyText}</p>
+        </blockquote>
+      ) : null}
+
       {hasChoices ? (
         <div className={styles.choices} role="group" aria-label="Варианты небольшого события">
           {choices.map((choice) => (
